@@ -1,0 +1,112 @@
+/* ===========================================================
+   Bài 2.2 – CSS box model: trang danh sách sản phẩm
+   =========================================================== */
+
+/* ---------- Bố cục trang ---------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Khung chứa: đủ rộng cho 4 sản phẩm mỗi hàng, căn giữa trang */
+.product-list {
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ---------- Hàng hóa ---------- */
+
+/* Hộp sản phẩm
+   - display: inline-block  => các hộp nằm cạnh nhau, hết chỗ tự xuống hàng
+   - position: relative     => làm mốc cho các phần tử absolute bên trong */
+.hh-box {
+  border-radius: 5px;
+  box-shadow: 0 0 5px silver;
+  position: relative;
+  display: inline-block;
+  margin: 25px 5px 5px 5px;   /* trên 25px để chừa chỗ cho tên sản phẩm */
+  padding: 15px 0px;
+  text-align: center;
+  width: 200px;
+}
+
+/* Rê chuột vào sản phẩm: bóng đổi sang màu đỏ */
+.hh-box:hover {
+  box-shadow: 0 0 5px red;
+}
+
+/* Ảnh sản phẩm */
+.hh-box-image {
+  width: 130px;
+  height: 130px;
+}
+
+/* Biểu tượng NEW: góc trên bên phải của hộp */
+.hh-box-icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+/* Tên sản phẩm: đẩy lên trên hộp 20px, rộng bằng hộp (inherit) */
+.hh-box-name {
+  position: absolute;
+  left: 0px;
+  top: -20px;
+  width: inherit;
+  text-align: center;
+}
+
+/* Giá: góc dưới bên trái */
+.hh-box-price {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  font-weight: bold;
+  color: silver;
+}
+
+/* Cột nút chức năng: góc dưới bên phải.
+   Rộng 25px nên mỗi icon nằm trên một dòng (xếp dọc) */
+.hh-box-actions {
+  position: absolute;
+  right: 8px;
+  bottom: 5px;
+  width: 25px;
+}
+
+.hh-box-actions img {
+  cursor: pointer;
+  border: 0px;
+  width: 25px;   /* cố định kích thước icon */
+}
+
+/* ---------- Phân trang ---------- */
+.pager {
+  text-align: center;
+  margin: 30px 0 10px;
+}
+
+.pager a {
+  display: inline-block;
+  padding: 6px 14px;
+  margin: 0 2px;
+  border: 1px solid silver;
+  border-radius: 3px;
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.pager a:hover {
+  border-color: red;
+  color: red;
+}
